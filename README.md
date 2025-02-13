@@ -1,6 +1,5 @@
 # Steganography-Project-AICTE---Edunet-Foundation---IBM-Skillsbuild-Cybersecurity-Internship-2025
-Secure Data Hiding in Image Using Steganography
-# Image Steganography using Python
+# Secure Data Hiding in Image Using Steganography with Python
 
 ## Overview
 This project demonstrates image steganography using Python and OpenCV. It allows users to hide a secret message inside an image and later retrieve it using a passcode. The encryption process modifies the least significant bits (LSB) of the image pixels to store the message, ensuring minimal distortion of the image.
