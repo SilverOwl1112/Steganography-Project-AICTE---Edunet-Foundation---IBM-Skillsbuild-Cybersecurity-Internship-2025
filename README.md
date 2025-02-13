@@ -13,11 +13,10 @@ This project demonstrates image steganography using Python and OpenCV. It allows
 ## Requirements
 - Python 3.x
 - OpenCV (`cv2`)
-- NumPy
 
 To install the required dependencies, run:
 ```bash
-pip install opencv-python numpy
+pip install opencv-python
 ```
 
 ## How to Use
