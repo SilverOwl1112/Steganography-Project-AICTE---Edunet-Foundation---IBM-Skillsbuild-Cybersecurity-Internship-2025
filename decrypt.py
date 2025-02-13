@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 path = input("Enter the encrypted image file path without quotes (ONLY IN PNG FORMAT): ")
 img = cv2.imread(path)  # Replace with the correct image path
