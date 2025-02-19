@@ -1,12 +1,12 @@
 import cv2
 
 path = input("Enter the encrypted image file path without quotes (ONLY IN PNG FORMAT): ")
-img = cv2.imread(path)  # Replace with the correct image path
+img = cv2.imread(path)  
 if img is None:
     print("Error: Encrypted image not found.")
     exit()
 
-# Load the stored passcode
+# Loads the stored passcode
 try:
     with open("passcode.txt", "r") as f:
         saved_password = f.read().strip()
@@ -22,7 +22,7 @@ if pas == saved_password:
 
     for i in range(h):
         for j in range(w):
-            for k in range(3):  # Iterate over RGB channels
+            for k in range(3):  # Iterates over RGB channels
                 msg_bits += str(img[i, j, k] & 1)
                 if msg_bits.endswith("1111111111111110"):  # End marker
                     found_marker = True
