@@ -1,8 +1,7 @@
 import cv2
-import numpy as np
 import os
 
-path = input("Enter the image file path without quotes (ONLY IN PNG FORMAT): ")
+path = input("Enter the image file path without quotes: ")
 img = cv2.imread(path)  
 if img is None:
     print("Error: Image not found or unable to load.")
@@ -22,8 +21,13 @@ msg_bytes = msg.encode("utf-8")
 msg_bits = ''.join(format(byte, '08b') for byte in msg_bytes) + '1111111111111110'  # End marker
 
 h, w, _ = img.shape
-bit_idx = 0
+max_bits = h * w * 3  # Maximum bits available in the image
 
+if len(msg_bits) > max_bits:
+    print("Error: Image is too small to store the secret message.")
+    exit()
+
+bit_idx = 0
 for i in range(h):
     for j in range(w):
         for k in range(3):  # Iterates over RGB channels
@@ -34,5 +38,5 @@ for i in range(h):
                 break
 
 cv2.imwrite("encryptedImage.png", img)
-os.system("start encryptedImage.png")  # Uses 'start' to open the image on Windows
+os.system("start encryptedImage.png")  # This is for Windows; on macOS use 'open' and on Linux use 'xdg-open'
 print("Image Encryption Successful.")
