@@ -47,9 +47,10 @@ pip install opencv-python
 - `encryptedImage.png` - Output image with the hidden message.
 
 ## Notes
-- Only PNG images should be used for encryption and decryption.
+- Only encrypted images of PNG format should be used for decryption since using JPG causes data loss during compression.
 - The image should be large enough to store the message.
 - Do not modify `passcode.txt` or `msg_length.txt`, as they are needed for decryption.
+- When using the command prompt to run the python files, the present working directory has to be the same directory where the python files are located.
 
 ## License
 This project is open-source and available for educational and research purposes. Feel free to modify and improve it!
